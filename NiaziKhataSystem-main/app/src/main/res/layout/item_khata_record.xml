@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Each khata record is shown as a card in the RecyclerView list -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/card_bg"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ── Top Row: Customer Name + Status Badge ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <!-- Avatar / Initial Circle -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                app:cardCornerRadius="21dp"
+                app:cardBackgroundColor="@color/accent_orange"
+                app:cardElevation="0dp"
+                android:layout_marginEnd="12dp">
+
+                <TextView
+                    android:id="@+id/tvInitial"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="N"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Name & Date column -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvCustomerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customer Name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="01/01/2025"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:layout_marginTop="2dp"/>
+
+            </LinearLayout>
+
+            <!-- Status Badge (clickable to toggle) -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unpaid"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/badge_unpaid"/>
+
+        </LinearLayout>
+
+        <!-- ── Divider line ── -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginBottom="10dp"/>
+
+        <!-- ── Amount row ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💰 Raqam:"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rs. 0"
+                android:textColor="@color/accent_orange"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <!-- Action Buttons -->
+            <ImageButton
+                android:id="@+id/btnEdit"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/btn_icon_bg"
+                android:src="@android:drawable/ic_menu_edit"
+                android:contentDescription="Edit"
+                android:layout_marginEnd="6dp"/>
+
+            <ImageButton
+                android:id="@+id/btnDelete"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/btn_icon_bg_red"
+                android:src="@android:drawable/ic_menu_delete"
+                android:contentDescription="Delete"/>
+
+        </LinearLayout>
+
+        <!-- ── Optional Notes ── -->
+        <TextView
+            android:id="@+id/tvNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/text_hint"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:paddingTop="6dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

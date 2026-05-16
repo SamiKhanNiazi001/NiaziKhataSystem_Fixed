@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ════════════════════════════════════════════════════════
+         Niazi Khata System — Dark Professional Theme
+         Primary: Dark surface #1A1A1A
+         Accent:  Orange #FF6B35
+         ════════════════════════════════════════════════════════ -->
+
+    <style name="Theme.NiaziKhataSystem" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+
+        <!-- Primary brand color (action bar, etc.) -->
+        <item name="colorPrimary">@color/accent_orange</item>
+        <item name="colorPrimaryVariant">@color/accent_orange_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">@color/accent_orange</item>
+        <item name="colorSecondaryVariant">@color/accent_orange_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Status bar color -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/bg_surface</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+
+        <!-- Background -->
+        <item name="android:windowBackground">@color/bg_dark</item>
+
+        <!-- Action bar style -->
+        <item name="actionBarStyle">@style/NiaziActionBarStyle</item>
+
+        <!-- Hide the default action bar (we use custom header) -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- EditText cursor color -->
+        <item name="android:textColorHighlight">#33FF6B35</item>
+
+        <!-- FAB color -->
+        <item name="colorAccent">@color/accent_orange</item>
+
+    </style>
+
+    <!-- Custom Action Bar style -->
+    <style name="NiaziActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="background">@color/bg_surface</item>
+        <item name="titleTextStyle">@style/NiaziActionBarTitleStyle</item>
+    </style>
+
+    <style name="NiaziActionBarTitleStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>
